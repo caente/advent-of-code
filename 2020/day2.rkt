@@ -6,9 +6,9 @@
 (require algorithms)
 (require racket/string)
 
-(define input (file->list "input_day2.txt"))
+(define input (file->list "2020/input_day2.txt"))
 
-(define triplets (count (λ (triplet)
+(define valid_passwords (count (λ (triplet)
         (match triplet 
           [(list range letter pass)
            (let* ([r (map (λ (s) (string->number s)) (string-split (symbol->string range) "-"))]
@@ -24,5 +24,5 @@
            ]))
      (sliding input 3 3)))
 
-(print triplets)
+(print valid_passwords)
 
